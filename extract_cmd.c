@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   extract_cmd.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/19 10:51:36 by strieste          #+#    #+#             */
-/*   Updated: 2025/11/21 13:20:03 by strieste         ###   ########.fr       */
+/*   Created: 2025/11/21 10:43:48 by strieste          #+#    #+#             */
+/*   Updated: 2025/11/21 10:48:17 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#include "pipex.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-# include "libft/libft.h"
+char	**extract_cmd(int ac, char **av)
+{
+	char	**cmd_arg;
 
-/*				Extract command				*/
-
-char	**extract_cmd(int ac, char **av);
-char	**get_envp(char **envp);
-
-/*				Clean service				*/
-
-void	ft_free_array(char **array);
-
-#endif
+	cmd_arg = ft_split(av[ac], ' ');
+	if (!cmd_arg[0])
+		return (ft_printf("Fail extract cmd\n"), NULL);
+	return (cmd_arg);
+}

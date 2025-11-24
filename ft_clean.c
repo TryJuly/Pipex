@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   ft_clean.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/19 10:51:36 by strieste          #+#    #+#             */
-/*   Updated: 2025/11/21 13:20:03 by strieste         ###   ########.fr       */
+/*   Created: 2025/11/21 13:17:58 by strieste          #+#    #+#             */
+/*   Updated: 2025/11/21 13:20:08 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#include "pipex.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-# include "libft/libft.h"
+void	ft_free_array(char **array)
+{
+	size_t	count;
 
-/*				Extract command				*/
-
-char	**extract_cmd(int ac, char **av);
-char	**get_envp(char **envp);
-
-/*				Clean service				*/
-
-void	ft_free_array(char **array);
-
-#endif
+	count = 0;
+	while (array[count])
+	{
+		free(array[count]);
+		count++;
+	}
+	free(array);
+	return ;
+}

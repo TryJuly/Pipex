@@ -6,8 +6,8 @@ NAME = pipex
 CC = gcc
 FLAGS = -Wall -Wextra -Werror -g
 
-SRCS =
-a1
+SRCS = pipex.c extract_cmd.c get_envp.c ft_clean.c
+
 SRCS_BONUS =
 
 INCLUDES = pipex.h
