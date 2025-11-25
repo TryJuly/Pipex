@@ -6,7 +6,7 @@ NAME = pipex
 CC = gcc
 FLAGS = -Wall -Wextra -Werror -g
 
-SRCS = pipex.c extract_cmd.c get_envp.c ft_clean.c check_path.c \
+SRCS = pipex.c extract_cmd.c get_envp.c ft_clean.c find_path.c file.c
 	
 
 SRCS_BONUS =
